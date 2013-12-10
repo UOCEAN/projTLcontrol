@@ -1,5 +1,7 @@
 #Traffic Light Control Proxy Server
 # 
+# By: Chentou TONG
+# Date: 10-Dec-2013
 #
 from twisted.internet import reactor, protocol, task
 import socket
