@@ -16,7 +16,7 @@ conn = pyodbc.connect('DRIVER={Microsoft Access Driver (*.mdb)};DBQ='+DBfile)
 cursor = conn.cursor()
 
 #Global variable
-siteNameSet = ("TLA", "TLB", "TLC", "TLD", "TLE", "TLF", "FH1", "FH2", "D6C", "IP1", "IP2", "SYN")
+siteNameSet = ("TLA", "TLB", "TLC", "TLD", "TLE", "TLF", "FH1", "FH2")
 pollDbTime = 5 #polling database timer
 oldTLAStatus = "0"
 #oldTLA_HMICMD = "0"
@@ -259,28 +259,12 @@ class MyProtocol(protocol.Protocol):
                             cmd1 = ''
                             cmd2 = self.name
                             cmd3 = ''
-                        elif cmd == "ACKON":
-                            cmd1 = ''
-                            cmd2 = self.name
-                            cmd3 = ''
-                        elif cmd == "ACKOFF":
-                            cmd1 = ''
-                            cmd2 = self.name
-                            cmd3 = ''
-                        elif cmd == "FOGON":
-                            cmd1 = ''
-                            cmd2 = self.name
-                            cmd3 = ''
-                        elif cmd == "FOGOFF":
-                            cmd1 = ''
-                            cmd2 = self.name
-                            cmd3 = ''
                         else:
                             print '\t' + '***Command unknown!! ', cmd
                             cmd = "UNKNOWN"
 
                         if cmd != "UNKNOWN":
-                        # broadcast message to other clients
+                            # broadcast message to other clients
                             print '\t' + 'message broadcast: ' + msg
                             for c in self.factory.clients:
                                 c.message(msg)
