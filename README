@@ -1,0 +1,5 @@
+Traffic Light Control Proxy Server
+
+- accept connection from clients
+- broadcast message receive from client
+- write message decode to database Access
