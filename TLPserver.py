@@ -6,12 +6,13 @@ import socket
 import sys
 import time
 import datetime
+import os
 
 #import unicodedata
 
 #database define
 import pyodbc
-DBfile = 'C:\projTLcontrol\DB_TLcontrol.mdb'
+DBfile = os.getcwd() + '\DB_TLcontrol.mdb'
 conn = pyodbc.connect('DRIVER={Microsoft Access Driver (*.mdb)};DBQ='+DBfile)
 cursor = conn.cursor()
 
